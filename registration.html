@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f7f1">
+    <meta name="description" content="Register for a YIDK programme or apply for youth mentorship.">
+    <title>Apply / Register — YIDK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#174c3b',
+                        leaf: '#367b54',
+                        lime: '#d7ef72',
+                        paper: '#f8f7f1',
+                        ink: '#1d2923'
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-paper font-sans text-ink antialiased">
+    <header class="border-b border-forest/10">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12" aria-label="Main navigation">
+            <a href="projec.html" class="flex items-center gap-3" aria-label="Back to YIDK home">
+                <span class="grid h-11 w-11 place-items-center rounded-2xl bg-forest font-display text-sm font-extrabold tracking-tight text-lime">YI</span>
+                <span class="font-display text-lg font-extrabold tracking-tight text-forest">YIDK<span class="ml-1 text-leaf">.</span></span>
+            </a>
+            <a href="projec.html" class="rounded-full border border-forest/15 px-5 py-3 text-sm font-bold text-forest transition hover:bg-[#eaf0e7]">← Back to home</a>
+        </nav>
+    </header>
+
+    <main class="px-5 py-12 sm:px-8 sm:py-16 lg:px-12">
+        <div class="mx-auto max-w-3xl">
+            <div class="text-center">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Your next step starts here</p>
+                <h1 class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-5xl">Apply or register.</h1>
+                <p class="mx-auto mt-4 max-w-xl text-base leading-7 text-ink/65">Use this dedicated form to register for a programme or apply for mentorship.</p>
+            </div>
+
+            <form id="application-form" class="mt-9 rounded-[1.75rem] bg-white p-6 shadow-sm sm:p-9">
+                <h2 class="font-display text-2xl font-extrabold text-forest">Start your application</h2>
+                <p class="mt-2 text-sm leading-6 text-ink/60">Complete the form and we’ll prepare an email for you to review and send.</p>
+                <div class="mt-7 grid gap-5 sm:grid-cols-2">
+                    <div class="sm:col-span-2">
+                        <label for="application-type" class="mb-2 block text-sm font-bold text-forest">I want to <span aria-hidden="true">*</span></label>
+                        <select id="application-type" name="applicationType" required class="w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-sm text-ink focus:border-leaf focus:outline-none focus:ring-2 focus:ring-leaf/20">
+                            <option value="">Choose an option</option>
+                            <option value="Programme registration">Register for a programme</option>
+                            <option value="Mentorship application">Apply for mentorship</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="applicant-name" class="mb-2 block text-sm font-bold text-forest">Your name <span aria-hidden="true">*</span></label>
+                        <input id="applicant-name" name="name" type="text" autocomplete="name" required class="w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-sm text-ink focus:border-leaf focus:outline-none focus:ring-2 focus:ring-leaf/20">
+                    </div>
+                    <div>
+                        <label for="applicant-email" class="mb-2 block text-sm font-bold text-forest">Email address <span aria-hidden="true">*</span></label>
+                        <input id="applicant-email" name="email" type="email" autocomplete="email" required class="w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-sm text-ink focus:border-leaf focus:outline-none focus:ring-2 focus:ring-leaf/20">
+                    </div>
+                    <div>
+                        <label for="applicant-age" class="mb-2 block text-sm font-bold text-forest">Age range <span class="font-normal text-ink/50">(optional)</span></label>
+                        <select id="applicant-age" name="ageRange" class="w-full rounded-xl border border-forest/15 bg-paper px-4 py-3 text-sm text-ink focus:border-leaf focus:outline-none focus:ring-2 focus:ring-leaf/20">
+                            <option value="">Prefer not to say</option>
+                            <option>13–15</option>
+                            <option>16–18</option>
+                            <option>19–24</option>
+                            <option>25+</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="applicant-message" class="mb-2 block text-sm font-bold text-forest">What would you like support with? <span aria-hidden="true">*</span></label>
+                        <textarea id="applicant-message" name="message" rows="5" required class="w-full resize-y rounded-xl border border-forest/15 bg-paper px-4 py-3 text-sm text-ink focus:border-leaf focus:outline-none focus:ring-2 focus:ring-leaf/20"></textarea>
+                    </div>
+                </div>
+                <label class="mt-5 flex items-start gap-3 text-sm leading-6 text-ink/65">
+                    <input name="emailConsent" type="checkbox" required class="mt-1 h-4 w-4 shrink-0 accent-forest">
+                    <span>I understand this will open an email draft with the details I provided, and I can review it before sending. <span aria-hidden="true">*</span></span>
+                </label>
+                <button type="submit" class="mt-6 inline-flex items-center rounded-full bg-forest px-7 py-4 text-sm font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-leaf">Continue by email <span class="ml-3 text-lg" aria-hidden="true">↗</span></button>
+                <p id="application-status" class="mt-4 text-sm leading-6 text-ink/60" role="status" aria-live="polite">Your details stay in this page until you choose to open and send the email from your email app.</p>
+            </form>
+
+            <p class="mt-6 text-center text-xs leading-5 text-ink/50">This form opens your email app to complete the application; it does not store or submit information on this website.</p>
+        </div>
+    </main>
+
+    <footer class="border-t border-forest/10">
+        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-6 text-sm text-ink/55 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+            <a href="projec.html" class="font-display font-extrabold text-forest">YIDK</a>
+            <p>Growing with young people, building stronger communities.</p>
+        </div>
+    </footer>
+
+    <script>
+        const applicationForm = document.getElementById('application-form');
+        const applicationType = document.getElementById('application-type');
+        const applicationStatus = document.getElementById('application-status');
+        const initialType = new URLSearchParams(window.location.search).get('type');
+
+        if (initialType === 'programme') {
+            applicationType.value = 'Programme registration';
+        } else if (initialType === 'mentorship') {
+            applicationType.value = 'Mentorship application';
+        }
+
+        applicationForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(applicationForm);
+            const subject = `${formData.get('applicationType')} — ${formData.get('name')}`;
+            const body = [
+                `Name: ${formData.get('name')}`,
+                `Email: ${formData.get('email')}`,
+                `Age range: ${formData.get('ageRange') || 'Not provided'}`,
+                '',
+                'How we can help:',
+                formData.get('message')
+            ].join('\n');
+            window.location.href = `mailto:info@yidpk.org?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            applicationStatus.textContent = 'Your email app should open with your message ready to review. Please send the email to complete your application. If it does not open, email info@yidpk.org directly.';
+        });
+    </script>
+</body>
+</html>

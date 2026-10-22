@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f8f7f1">
+    <meta name="description" content="YIDK works alongside young people to build confidence, opportunity, and a brighter future.">
+    <title>YIDK — Youth Initiative Development</title>
+    <style>
+        main > section[hidden] {
+            display: none !important;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#174c3b',
+                        leaf: '#367b54',
+                        lime: '#d7ef72',
+                        paper: '#f8f7f1',
+                        ink: '#1d2923'
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Manrope', 'sans-serif']
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="bg-paper font-sans text-ink antialiased">
+    <header class="relative z-20">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8 lg:px-12" aria-label="Main navigation">
+            <a href="projec.html?page=home" class="flex items-center gap-3" aria-label="YIDK home">
+                <img class="h-11 w-11 rounded-2xl bg-white object-contain p-1" src="https://yidpk.org/wp-content/uploads/2021/08/YIDP_LOGO-Transparent.png" alt="YIDP logo">
+                <span class="font-display text-lg font-extrabold tracking-tight text-forest">YIDK<span class="ml-1 text-leaf">.</span></span>
+            </a>
+            <div class="hidden items-center gap-9 md:flex">
+                <a href="projec.html?page=about" class="text-sm font-semibold text-ink/70 transition hover:text-forest">About us</a>
+                <a href="projec.html?page=work" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Our work</a>
+                <a href="projec.html?page=events" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Events</a>
+                <a href="projec.html?page=media" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Media</a>
+                <a href="projec.html?page=team" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Our team</a>
+                <a href="projec.html?page=partners" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Partners</a>
+                <a href="projec.html?page=faq-values" class="text-sm font-semibold text-ink/70 transition hover:text-forest">FAQs &amp; values</a>
+                <a href="projec.html?page=approach" class="text-sm font-semibold text-ink/70 transition hover:text-forest">Our approach</a>
+            </div>
+            <a href="registration.html" class="hidden rounded-full bg-forest px-6 py-3 text-sm font-bold text-white transition hover:bg-leaf md:inline-flex">
+                Apply / register <span class="ml-2" aria-hidden="true">↗</span>
+            </a>
+            <button id="menu-toggle" class="grid h-11 w-11 place-items-center rounded-full border border-forest/15 text-forest md:hidden" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="absolute left-0 right-0 top-full hidden border-t border-forest/10 bg-paper px-5 py-5 shadow-lg md:hidden">
+            <div class="mx-auto flex max-w-7xl flex-col gap-4">
+                <a href="projec.html?page=about" class="py-1 text-sm font-semibold">About us</a>
+                <a href="projec.html?page=work" class="py-1 text-sm font-semibold">Our work</a>
+                <a href="projec.html?page=events" class="py-1 text-sm font-semibold">Events</a>
+                <a href="projec.html?page=media" class="py-1 text-sm font-semibold">Media</a>
+                <a href="projec.html?page=team" class="py-1 text-sm font-semibold">Our team</a>
+                <a href="projec.html?page=partners" class="py-1 text-sm font-semibold">Partners</a>
+                <a href="projec.html?page=faq-values" class="py-1 text-sm font-semibold">FAQs &amp; values</a>
+                <a href="projec.html?page=approach" class="py-1 text-sm font-semibold">Our approach</a>
+                <a href="registration.html" class="mt-1 rounded-full bg-forest px-5 py-3 text-center text-sm font-bold text-white">Apply / register ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-8 sm:px-8 sm:pb-20 lg:grid-cols-[0.94fr_1.06fr] lg:gap-10 lg:px-12 lg:pb-28 lg:pt-10">
+            <div class="max-w-xl">
+                <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-forest/10 bg-white/70 px-4 py-2 text-xs font-bold uppercase tracking-[0.14em] text-forest">
+                    <span class="h-2 w-2 rounded-full bg-leaf"></span> Young people. Brighter futures.
+                </div>
+                <h1 class="font-display text-5xl font-extrabold leading-[1.06] tracking-[-0.055em] text-forest sm:text-6xl lg:text-[4.35rem]">
+                    A little support can change <span class="relative inline-block">everything.<svg class="absolute -bottom-1 left-0 w-full text-lime" viewBox="0 0 300 12" fill="none" aria-hidden="true"><path d="M3 8.5C78 2.5 206 1.5 296 6.5" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg></span>
+                </h1>
+                <p class="mt-7 max-w-lg text-base leading-7 text-ink/65 sm:text-lg sm:leading-8">
+                    We work alongside young people to grow their skills, find their voice, and create opportunities for a future they choose.
+                </p>
+                <div class="mt-9 flex flex-wrap items-center gap-4">
+                    <a href="registration.html" class="inline-flex items-center rounded-full bg-forest px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-leaf">
+                        Apply or register <span class="ml-3 text-lg" aria-hidden="true">↗</span>
+                    </a>
+                    <a href="projec.html?page=about" class="inline-flex items-center gap-2 px-3 py-3 text-sm font-bold text-forest">
+                        Who we are <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+                <div class="mt-12 flex items-center gap-4 border-t border-forest/10 pt-6">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-lime font-display text-xs font-extrabold text-forest" aria-hidden="true">YI</span>
+                    <p class="text-sm leading-5 text-ink/60"><span class="font-bold text-forest">Built with young people</span><br>Rooted in community, open to everyone.</p>
+                </div>
+            </div>
+
+            <div class="relative mx-auto w-full max-w-[610px] lg:ml-auto">
+                <div class="absolute -right-3 top-8 h-28 w-28 rounded-full bg-lime sm:-right-5 sm:h-36 sm:w-36"></div>
+                <div class="absolute -bottom-5 -left-4 h-28 w-28 rounded-full border-[18px] border-[#e8c48e] sm:-left-8 sm:h-36 sm:w-36"></div>
+                <div class="relative h-[410px] overflow-hidden rounded-[2rem] bg-[#c9d6c4] sm:h-[520px] sm:rounded-[2.5rem]">
+                    <img class="h-full w-full object-cover object-center" src="https://yidpk.org/wp-content/uploads/2021/08/sports9.png" alt="Young boys smiling together with a football" fetchpriority="high">
+                    <div class="absolute inset-0 bg-gradient-to-t from-forest/55 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 text-white sm:bottom-8 sm:left-8 sm:right-8">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-lime">The YIDK belief</p>
+                            <p class="mt-2 max-w-xs font-display text-2xl font-bold leading-tight sm:text-3xl">Every young person deserves the chance to thrive.</p>
+                        </div>
+                        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-lime text-xl text-forest" aria-hidden="true">↗</span>
+                    </div>
+                </div>
+                <div class="absolute -left-4 top-12 max-w-[170px] rounded-2xl bg-white p-4 shadow-xl shadow-forest/10 sm:-left-12 sm:top-16 sm:max-w-[190px] sm:p-5">
+                    <span class="grid h-9 w-9 place-items-center rounded-xl bg-lime text-lg text-forest" aria-hidden="true">✳</span>
+                    <p class="mt-3 font-display text-sm font-extrabold leading-snug text-forest sm:text-base">Ideas grow when young people lead.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-white py-20 sm:py-24">
+            <div class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20 lg:px-12">
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">A place to begin</p>
+                    <h2 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-[-0.04em] text-forest sm:text-4xl">Young people are not the future. They are the now.</h2>
+                </div>
+                <div class="max-w-2xl">
+                    <p class="text-lg leading-8 text-ink/70">YIDK is a youth-focused initiative that believes lasting change starts by listening. YIDP, the Kenya-based programme represented here, was established in 2016. Its work brings together sport, education, health, digital skills, and community development so young people can learn, connect, and shape their futures.</p>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+                        <article class="rounded-2xl bg-[#eaf0e7] p-5">
+                            <h3 class="font-display text-lg font-extrabold text-forest">Our mission</h3>
+                            <p class="mt-2 text-sm leading-6 text-ink/65">Help young people thrive through sport, education, health, digital skills, and enterprise, while advancing wellbeing, inclusion, and community development.</p>
+                        </article>
+                        <article class="rounded-2xl bg-[#f1e9d9] p-5">
+                            <h3 class="font-display text-lg font-extrabold text-forest">Our vision</h3>
+                            <p class="mt-2 text-sm leading-6 text-ink/65">An inclusive future where young people have the support and opportunities to lead healthy, fulfilling lives and strengthen their communities.</p>
+                        </article>
+                    </div>
+                    <a href="projec.html?page=approach" class="mt-6 inline-flex items-center gap-3 text-sm font-bold text-forest">Get to know us <span class="grid h-8 w-8 place-items-center rounded-full bg-lime text-base">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="border-y border-forest/10 bg-white/70 px-5 py-14 sm:px-8 sm:py-16 lg:px-12" aria-labelledby="impact-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Our impact</p>
+                        <h2 id="impact-title" class="mt-3 font-display text-2xl font-extrabold tracking-[-0.04em] text-forest sm:text-3xl">Progress made possible together.</h2>
+                    </div>
+                    <p class="max-w-sm text-sm leading-6 text-ink/60">A growing community of young people and partners creating positive change.</p>
+                </div>
+                <dl class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="rounded-2xl bg-[#eaf0e7] p-6 sm:p-7">
+                        <dd class="font-display text-4xl font-extrabold tracking-tight text-forest sm:text-5xl">300</dd>
+                        <dt class="mt-2 text-sm font-bold text-ink/70">coaches trained</dt>
+                    </div>
+                    <div class="rounded-2xl bg-[#f1e9d9] p-6 sm:p-7">
+                        <dd class="font-display text-4xl font-extrabold tracking-tight text-forest sm:text-5xl">1,000</dd>
+                        <dt class="mt-2 text-sm font-bold text-ink/70">youth trained</dt>
+                    </div>
+                    <div class="rounded-2xl bg-[#eaf0e7] p-6 sm:p-7">
+                        <dd class="font-display text-4xl font-extrabold tracking-tight text-forest sm:text-5xl">20,000</dd>
+                        <dt class="mt-2 text-sm font-bold text-ink/70">youth reached</dt>
+                    </div>
+                    <div class="rounded-2xl bg-[#f1e9d9] p-6 sm:p-7">
+                        <dd class="font-display text-4xl font-extrabold tracking-tight text-forest sm:text-5xl">10</dd>
+                        <dt class="mt-2 text-sm font-bold text-ink/70">scholars</dt>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="events" class="bg-[#e9efdf] px-5 py-20 sm:px-8 sm:py-24 lg:px-12" aria-labelledby="events-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Make a date</p>
+                        <h2 id="events-title" class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">Workshops, sport &amp; more.</h2>
+                    </div>
+                    <p class="max-w-md text-sm leading-6 text-ink/65">Explore what’s coming up. Choose a date or filter by event type to find something for you.</p>
+                </div>
+
+                <div class="mt-9 grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+                    <div class="rounded-[1.75rem] bg-white p-5 shadow-sm sm:p-7">
+                        <div class="flex items-center justify-between gap-4">
+                            <button id="calendar-previous" type="button" class="grid h-10 w-10 place-items-center rounded-full border border-forest/15 text-lg text-forest transition hover:bg-[#eaf0e7]" aria-label="Previous month">←</button>
+                            <h3 id="calendar-month" class="font-display text-xl font-extrabold text-forest" aria-live="polite"></h3>
+                            <button id="calendar-next" type="button" class="grid h-10 w-10 place-items-center rounded-full border border-forest/15 text-lg text-forest transition hover:bg-[#eaf0e7]" aria-label="Next month">→</button>
+                        </div>
+                        <div class="mt-6 grid grid-cols-7 text-center text-xs font-bold uppercase tracking-wide text-ink/50" aria-hidden="true">
+                            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                        </div>
+                        <div id="calendar-days" class="mt-3 grid grid-cols-7 gap-y-1" aria-label="Calendar dates"></div>
+                        <div class="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-forest/10 pt-4 text-xs text-ink/60">
+                            <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full bg-leaf"></span>Events scheduled</span>
+                            <span class="inline-flex items-center gap-2"><span class="h-2.5 w-2.5 rounded-full border-2 border-lime bg-white"></span>Today</span>
+                        </div>
+                    </div>
+
+                    <div class="rounded-[1.75rem] bg-white p-5 shadow-sm sm:p-7">
+                        <div class="flex flex-wrap items-center justify-between gap-3">
+                            <h3 id="event-list-title" class="font-display text-xl font-extrabold text-forest">Upcoming events</h3>
+                            <div class="flex flex-wrap gap-2" role="group" aria-label="Filter events by type">
+                                <button type="button" data-event-filter="all" aria-pressed="true" class="rounded-full bg-forest px-4 py-2 text-xs font-bold text-white">All</button>
+                                <button type="button" data-event-filter="workshop" aria-pressed="false" class="rounded-full border border-forest/15 px-4 py-2 text-xs font-bold text-forest transition hover:bg-[#eaf0e7]">Workshops</button>
+                                <button type="button" data-event-filter="sport" aria-pressed="false" class="rounded-full border border-forest/15 px-4 py-2 text-xs font-bold text-forest transition hover:bg-[#eaf0e7]">Sport</button>
+                            </div>
+                            <button id="clear-event-date" type="button" class="hidden text-xs font-bold text-leaf underline underline-offset-4">Clear date</button>
+                        </div>
+                        <div id="event-list" class="mt-5 space-y-3" aria-live="polite"></div>
+                        <p class="mt-6 border-t border-forest/10 pt-4 text-xs leading-5 text-ink/50">Add or update listings in the <code>events</code> list in this page’s JavaScript. This self-contained calendar does not sync changes across devices or store registrations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+            <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+                <div class="max-w-xl">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">What we focus on</p>
+                    <h2 class="mt-4 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">Room to learn. Space to lead.</h2>
+                </div>
+                <p class="max-w-sm text-sm leading-6 text-ink/60">Our work starts with young people’s ambitions and responds to what their communities need.</p>
+            </div>
+            <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <article class="group rounded-[1.75rem] bg-[#eaf0e7] p-7 transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white text-2xl text-forest" aria-hidden="true">◎</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-leaf">01 / Wellbeing</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold text-forest">Health &amp; wellbeing</h3>
+                    <p class="mt-3 text-sm leading-6 text-ink/65">Support physical and mental wellbeing through sport, wellness activities, health awareness, and supportive spaces.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-forest" href="projec.html?page=contact" aria-label="Ask us about health and wellbeing">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+                <article class="group rounded-[1.75rem] bg-forest p-7 text-white transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-lime text-2xl text-forest" aria-hidden="true">✳</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-lime">02 / Learning &amp; livelihoods</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold">Education &amp; employability</h3>
+                    <p class="mt-3 text-sm leading-6 text-white/70">Connect young people with learning support, scholarships, digital skills, financial literacy, entrepreneurship, and work pathways.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-lime" href="projec.html?page=contact" aria-label="Ask us about education and employability">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+                <article class="group rounded-[1.75rem] bg-[#f1e9d9] p-7 transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white text-2xl text-forest" aria-hidden="true">↗</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-leaf">03 / Participation</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold text-forest">Youth &amp; inclusion</h3>
+                    <p class="mt-3 text-sm leading-6 text-ink/65">Create welcoming opportunities for young people to be heard, build skills, connect with peers, and shape community decisions.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-forest" href="projec.html?page=contact" aria-label="Ask us about youth inclusion">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+                <article class="group rounded-[1.75rem] bg-[#eaf0e7] p-7 transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white text-2xl text-forest" aria-hidden="true">⚽</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-leaf">04 / Movement</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold text-forest">Sports participation</h3>
+                    <p class="mt-3 text-sm leading-6 text-ink/65">Use inclusive sports activities and events to build teamwork, confidence, leadership, and healthy habits.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-forest" href="projec.html?page=events" aria-label="Explore sports events">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+                <article class="group rounded-[1.75rem] bg-[#f1e9d9] p-7 transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-white text-2xl text-forest" aria-hidden="true">⌂</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-leaf">05 / Resilience</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold text-forest">Disaster risk resilience</h3>
+                    <p class="mt-3 text-sm leading-6 text-ink/65">Combine community resilience activities with wellbeing support to help young people respond to and recover from emergencies.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-forest" href="projec.html?page=contact" aria-label="Ask us about disaster risk resilience">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+                <article class="group rounded-[1.75rem] bg-forest p-7 text-white transition hover:-translate-y-1 sm:p-8">
+                    <span class="grid h-12 w-12 place-items-center rounded-2xl bg-lime text-2xl text-forest" aria-hidden="true">✳</span>
+                    <p class="mt-8 text-xs font-bold uppercase tracking-[0.16em] text-lime">06 / Equal opportunity</p>
+                    <h3 class="mt-3 font-display text-2xl font-extrabold">Gender equity</h3>
+                    <p class="mt-3 text-sm leading-6 text-white/70">Promote safer, more inclusive participation and address barriers facing girls and young women in sport and community life.</p>
+                    <a class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-lime" href="projec.html?page=contact" aria-label="Ask us about gender equity">Explore this focus <span class="transition group-hover:translate-x-1">→</span></a>
+                </article>
+            </div>
+            <div class="mt-12 rounded-[1.75rem] bg-[#e9efdf] p-6 sm:p-8">
+                <p class="text-xs font-bold uppercase tracking-[0.16em] text-leaf">Our contribution to global goals</p>
+                <h3 class="mt-2 font-display text-2xl font-extrabold text-forest">Working toward a fairer, healthier future.</h3>
+                <dl class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                    <div class="rounded-xl bg-white p-4"><dt class="text-xs font-bold uppercase tracking-wide text-leaf">SDG 3</dt><dd class="mt-1 text-sm font-bold text-forest">Good health and wellbeing</dd></div>
+                    <div class="rounded-xl bg-white p-4"><dt class="text-xs font-bold uppercase tracking-wide text-leaf">SDG 4</dt><dd class="mt-1 text-sm font-bold text-forest">Quality education</dd></div>
+                    <div class="rounded-xl bg-white p-4"><dt class="text-xs font-bold uppercase tracking-wide text-leaf">SDG 8</dt><dd class="mt-1 text-sm font-bold text-forest">Decent work and economic growth</dd></div>
+                    <div class="rounded-xl bg-white p-4"><dt class="text-xs font-bold uppercase tracking-wide text-leaf">SDG 10</dt><dd class="mt-1 text-sm font-bold text-forest">Reduced inequalities</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="media" class="px-5 py-20 sm:px-8 sm:py-24 lg:px-12" aria-labelledby="media-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Beyond the highlights</p>
+                        <h2 id="media-title" class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">See our community in action.</h2>
+                    </div>
+                    <p class="max-w-md text-sm leading-6 text-ink/65">Photos and video highlights from YIDK events, workshops, and tournaments.</p>
+                </div>
+                <div id="photo-gallery" class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" aria-live="polite"></div>
+                <div class="mt-14">
+                    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Watch highlights</p>
+                            <h3 class="mt-3 font-display text-2xl font-extrabold tracking-[-0.04em] text-forest sm:text-3xl">Stories worth sharing.</h3>
+                        </div>
+                        <p class="max-w-md text-sm leading-6 text-ink/65">Video highlights from our YouTube and Vimeo channels.</p>
+                    </div>
+                    <div id="video-gallery" class="mt-7 grid gap-5 md:grid-cols-2" aria-live="polite"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="bg-[#e9efdf] px-5 py-20 sm:px-8 sm:py-24 lg:px-12" aria-labelledby="team-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">The people behind the work</p>
+                        <h2 id="team-title" class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">Meet our team.</h2>
+                    </div>
+                    <p class="max-w-md text-sm leading-6 text-ink/65">A committed team bringing experience, care, and fresh ideas to youth development.</p>
+                </div>
+                <div id="team-gallery" class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="partners" class="bg-white px-5 py-16 sm:px-8 sm:py-20 lg:px-12" aria-labelledby="partners-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="mx-auto max-w-2xl text-center">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Stronger together</p>
+                    <h2 id="partners-title" class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">Our partners &amp; supporters.</h2>
+                    <p class="mt-4 text-sm leading-6 text-ink/65">We’re grateful to the NGOs, community partners, and government organisations working alongside young people.</p>
+                </div>
+                <div id="partner-logos" class="mt-9 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="faq-values" class="px-5 py-20 sm:px-8 sm:py-24 lg:px-12" aria-labelledby="faq-values-title">
+            <div class="mx-auto max-w-7xl">
+                <div class="mx-auto max-w-3xl text-center">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Good questions. Shared principles.</p>
+                    <h2 id="faq-values-title" class="mt-3 font-display text-3xl font-extrabold tracking-[-0.04em] text-forest sm:text-4xl">Questions &amp; core values.</h2>
+                </div>
+                <div class="mt-10 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
+                    <div>
+                        <h3 class="font-display text-2xl font-extrabold text-forest">Frequently asked questions</h3>
+                        <div id="faq-list" class="mt-5 space-y-3"></div>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-2xl font-extrabold text-forest">Our core values</h3>
+                        <p class="mt-2 text-sm leading-6 text-ink/60">The principles that guide how we work with young people and communities.</p>
+                        <div id="core-values-list" class="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="bg-[#e9efdf] py-20 sm:py-24">
+            <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20 lg:px-12">
+                <div class="relative mx-auto w-full max-w-lg">
+                    <div class="absolute -bottom-4 -right-4 h-32 w-32 rounded-[2rem] bg-lime"></div>
+                    <svg class="relative h-[370px] w-full rounded-[2rem] bg-[#dfe9d4] sm:h-[440px]" viewBox="0 0 600 520" role="img" aria-labelledby="approach-art-title" preserveAspectRatio="xMidYMid slice">
+                        <title id="approach-art-title">An original illustration of people sharing ideas around a table</title>
+                        <rect width="600" height="520" rx="32" fill="#dfe9d4"/>
+                        <circle cx="492" cy="92" r="48" fill="#d7ef72"/>
+                        <path d="M0 365q155-57 293-9t307-24v188H0z" fill="#9fbd91"/>
+                        <rect x="133" y="299" width="334" height="26" rx="13" fill="#e8c48e"/>
+                        <path d="M173 325v131m254-131v131" stroke="#174c3b" stroke-width="17" stroke-linecap="round"/>
+                        <circle cx="160" cy="185" r="39" fill="#9b654d"/>
+                        <path d="M112 232q48-30 96 0l21 69H91z" fill="#174c3b"/>
+                        <path d="m147 247 48 42" stroke="#9b654d" stroke-width="15" stroke-linecap="round"/>
+                        <circle cx="438" cy="182" r="39" fill="#704b3b"/>
+                        <path d="M390 229q48-30 96 0l21 72H369z" fill="#d7ef72"/>
+                        <path d="m453 246-47 44" stroke="#704b3b" stroke-width="15" stroke-linecap="round"/>
+                        <circle cx="300" cy="223" r="35" fill="#b77959"/>
+                        <path d="M257 265q43-26 86 0l19 35H238z" fill="#f1e9d9"/>
+                        <path d="m279 278-32 21m75-21 34 21" stroke="#b77959" stroke-width="14" stroke-linecap="round"/>
+                        <rect x="230" y="276" width="138" height="14" rx="7" fill="#ffffff"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">How we work</p>
+                    <h2 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-[-0.04em] text-forest sm:text-4xl">Listen first. Build together. Keep growing.</h2>
+                    <p class="mt-5 text-base leading-7 text-ink/65">We believe good youth work is done with young people, not simply for them. That means listening to lived experience, making room for different perspectives, and learning as we go.</p>
+                    <div class="mt-8 space-y-5">
+                        <div class="flex gap-4">
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-forest font-display text-sm font-bold text-lime">1</span>
+                            <div><h3 class="font-bold text-forest">Start with listening</h3><p class="mt-1 text-sm leading-6 text-ink/60">Understand people, strengths, and priorities in each community.</p></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-forest font-display text-sm font-bold text-lime">2</span>
+                            <div><h3 class="font-bold text-forest">Make space for young leaders</h3><p class="mt-1 text-sm leading-6 text-ink/60">Support young people to shape ideas and take meaningful action.</p></div>
+                        </div>
+                        <div class="flex gap-4">
+                            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-forest font-display text-sm font-bold text-lime">3</span>
+                            <div><h3 class="font-bold text-forest">Grow what works</h3><p class="mt-1 text-sm leading-6 text-ink/60">Reflect together, share learning, and keep improving our work.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+            <div class="mx-auto max-w-7xl">
+                <div class="mx-auto max-w-2xl text-center">
+                    <p class="text-xs font-bold uppercase tracking-[0.18em] text-leaf">Your next step starts here</p>
+                    <h2 class="mt-4 font-display text-3xl font-extrabold leading-tight tracking-[-0.04em] text-forest sm:text-5xl">Ready to get involved?</h2>
+                    <p class="mx-auto mt-5 max-w-lg leading-7 text-ink/65">Choose a programme or apply for one-to-one mentorship. Fill in a few details and we’ll be in touch.</p>
+                </div>
+                <div class="mt-10 grid gap-4 sm:grid-cols-2">
+                    <a href="registration.html?type=programme" class="group rounded-[1.75rem] bg-forest p-7 text-left text-white transition hover:-translate-y-1 hover:bg-leaf sm:p-8">
+                        <span class="text-xs font-bold uppercase tracking-[0.16em] text-lime">Join a programme</span>
+                        <span class="mt-3 block font-display text-2xl font-extrabold">Register your interest <span aria-hidden="true">↗</span></span>
+                        <span class="mt-2 block text-sm leading-6 text-white/70">Tell us what you’d like to learn or take part in.</span>
+                    </a>
+                    <a href="registration.html?type=mentorship" class="group rounded-[1.75rem] bg-[#eaf0e7] p-7 text-left text-forest transition hover:-translate-y-1 hover:bg-[#dce8d7] sm:p-8">
+                        <span class="text-xs font-bold uppercase tracking-[0.16em] text-leaf">Get personal support</span>
+                        <span class="mt-3 block font-display text-2xl font-extrabold">Apply for mentorship <span aria-hidden="true">↗</span></span>
+                        <span class="mt-2 block text-sm leading-6 text-ink/65">Share what you’re working towards and what support would help.</span>
+                    </a>
+                </div>
+                <div class="mt-8 grid gap-6 rounded-[1.75rem] border border-forest/10 bg-white p-6 sm:grid-cols-2 sm:p-8">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.16em] text-leaf">Talk with the team</p>
+                        <h3 class="mt-2 font-display text-xl font-extrabold text-forest">Contact YIDP</h3>
+                        <address class="mt-4 space-y-2 text-sm not-italic leading-6 text-ink/65">
+                            <p><a class="font-semibold text-forest underline underline-offset-4" href="mailto:info@yidpk.org">info@yidpk.org</a></p>
+                            <p><a class="font-semibold text-forest underline underline-offset-4" href="tel:+254711269225">+254 711 269 225</a> <span aria-hidden="true">·</span> <a class="font-semibold text-forest underline underline-offset-4" href="tel:+254710703891">+254 710 703 891</a></p>
+                            <p>New Njiru, Nairobi, Kenya</p>
+                        </address>
+                    </div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.16em] text-leaf">Keep connected</p>
+                        <h3 class="mt-2 font-display text-xl font-extrabold text-forest">Follow YIDP</h3>
+                        <div class="mt-4 flex flex-wrap gap-3">
+                            <a class="rounded-full bg-[#eaf0e7] px-4 py-2 text-sm font-bold text-forest transition hover:bg-lime" href="https://www.facebook.com/YouthInitiativeDevelopmentProgramme" target="_blank" rel="noopener noreferrer">Facebook</a>
+                            <a class="rounded-full bg-[#eaf0e7] px-4 py-2 text-sm font-bold text-forest transition hover:bg-lime" href="https://www.instagram.com/yidpkenya/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                            <a class="rounded-full bg-[#eaf0e7] px-4 py-2 text-sm font-bold text-forest transition hover:bg-lime" href="https://www.linkedin.com/company/youth-initiative-development-programme/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            <a class="rounded-full bg-[#eaf0e7] px-4 py-2 text-sm font-bold text-forest transition hover:bg-lime" href="https://x.com/yidpkenya" target="_blank" rel="noopener noreferrer">X</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-5 flex flex-col gap-4 rounded-[1.5rem] bg-[#e9efdf] p-6 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <h3 class="font-display text-lg font-extrabold text-forest">Get programme and event updates</h3>
+                        <p class="mt-1 text-sm leading-6 text-ink/65">Email the team to request newsletter updates. Your email app will open so you can send the request.</p>
+                    </div>
+                    <a class="inline-flex shrink-0 items-center justify-center rounded-full bg-forest px-6 py-3 text-sm font-bold text-white transition hover:bg-leaf" href="mailto:info@yidpk.org?subject=Newsletter%20subscription%20request">Request updates <span class="ml-2" aria-hidden="true">↗</span></a>
+                </div>
+                <p class="mx-auto mt-6 max-w-xl text-center text-sm leading-6 text-ink/55">The registration form is on its own page, so you can complete it when you’re ready.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-forest/10">
+        <div class="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-7 text-sm text-ink/55 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
+            <a href="projec.html?page=home" class="flex items-center gap-2 font-display font-extrabold text-forest"><img class="h-8 w-8 rounded-lg bg-white object-contain p-0.5" src="https://yidpk.org/wp-content/uploads/2021/08/YIDP_LOGO-Transparent.png" alt="YIDP logo"> YIDK</a>
+            <p>Growing with young people, building stronger communities.</p>
+            <p>© <span id="year"></span> YIDK. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+            menuToggle.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+            mobileMenu.classList.toggle('hidden', isExpanded);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Open navigation menu');
+            });
+        });
+
+        const pageSections = {
+            home: ['home'],
+            about: ['about', 'impact'],
+            work: ['work'],
+            events: ['events'],
+            media: ['media'],
+            team: ['team'],
+            partners: ['partners'],
+            'faq-values': ['faq-values'],
+            approach: ['approach'],
+            contact: ['contact']
+        };
+        const pageTitles = {
+            home: 'YIDK — Youth Initiative Development',
+            about: 'About us — YIDK',
+            work: 'Our work — YIDK',
+            events: 'Events — YIDK',
+            media: 'Media — YIDK',
+            team: 'Our team — YIDK',
+            partners: 'Partners — YIDK',
+            'faq-values': 'FAQs & core values — YIDK',
+            approach: 'Our approach — YIDK',
+            contact: 'Get involved — YIDK'
+        };
+        const requestedPage = new URLSearchParams(window.location.search).get('page');
+        const currentPage = Object.hasOwn(pageSections, requestedPage) ? requestedPage : 'home';
+
+        document.querySelectorAll('main > section').forEach((section) => {
+            section.hidden = !pageSections[currentPage].includes(section.id);
+        });
+        document.title = pageTitles[currentPage];
+        document.querySelectorAll('nav a[href^="projec.html?page="]').forEach((link) => {
+            if (new URL(link.href).searchParams.get('page') === currentPage) {
+                link.setAttribute('aria-current', 'page');
+            }
+        });
+
+        // Add entries here with a YYYY-MM-DD date, type (workshop or sport), title, and optional details.
+        const events = [
+            {
+                date: '2026-11-19',
+                endDate: '2026-11-20',
+                type: 'sport',
+                title: 'Sports Wellness Summit 2026',
+                time: 'Nov 19, 8:00 AM – Nov 20, 5:00 PM',
+                location: 'Nairobi, Kenya',
+                description: 'A two-day gathering on mental health, wellbeing, safeguarding, and resilience across the sports ecosystem.',
+                url: 'https://yidpk.org/event/sports-wellness-summit/'
+            }
+        ];
+        const calendarMonth = document.getElementById('calendar-month');
+        const calendarDays = document.getElementById('calendar-days');
+        const eventList = document.getElementById('event-list');
+        const eventListTitle = document.getElementById('event-list-title');
+        const clearEventDate = document.getElementById('clear-event-date');
+        const eventFilters = document.querySelectorAll('[data-event-filter]');
+        const today = new Date();
+        const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+        let displayedMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+        let selectedDate = null;
+        let selectedFilter = 'all';
+
+        const calendarEvents = events
+            .filter((item) => /^\d{4}-\d{2}-\d{2}$/.test(item.date) && ['workshop', 'sport'].includes(item.type))
+            .sort((a, b) => a.date.localeCompare(b.date));
+
+        function createElement(tag, className, text) {
+            const element = document.createElement(tag);
+            element.className = className;
+            if (text) element.textContent = text;
+            return element;
+        }
+
+        const mediaItems = [];
+        const videoItems = [
+            {
+                provider: 'youtube',
+                id: 'RIfUXGstju0',
+                title: 'YIDP video highlight',
+                caption: 'Video linked from the YIDP website.'
+            }
+        ];
+        const partnerItems = [
+            {
+                logo: 'https://yidpk.org/wp-content/uploads/2024/11/TRIPLE-I-1.png',
+                name: 'Triple I Foundation',
+                category: 'Community partner'
+            },
+            {
+                logo: 'https://yidpk.org/wp-content/uploads/2024/11/HEALING-PLANET.png',
+                name: 'Healing Planet',
+                category: 'Partner'
+            }
+        ];
+        // Edit names, roles, and photo URLs here; remove any entry to omit that team card.
+        const teamMembers = [
+            { name: 'Bernerd Obuya', role: 'Patron', photo: 'https://yidpk.org/wp-content/uploads/2024/11/BEN-PATRON-370x446.png' },
+            { name: 'Collince Alan Dundo', role: 'Founder & Interim CEO', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Collince-4-370x446.png' },
+            { name: 'Irene Odhiambo', role: 'Community Worker', photo: 'https://yidpk.org/wp-content/uploads/2024/11/IRENE-ODHIAMBO-370x446.jpg' },
+            { name: 'Isaac Okeyo', role: 'Chairman', photo: 'https://yidpk.org/wp-content/uploads/2024/11/iSAAC-OKEYO-370x446.jpg' },
+            { name: 'Josephine Chan', role: 'Project Coordinator', photo: 'https://yidpk.org/wp-content/uploads/2024/11/Ajos-1-370x446.png' },
+            { name: 'Yvonne Ombewa', role: 'Psychologist', photo: 'https://yidpk.org/wp-content/uploads/2024/11/Yvonne-Ombew-370x446.jpg' },
+            { name: 'Stella (Xiao) Yu', role: 'Co-Founder & Resource Mobilization Advisor', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Stella-Xiao-Yu-370x446.png' },
+            { name: 'Arianna Abdul-Nour', role: 'Co-Founder & Wellness Strategist', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Arianna-370x446.png' },
+            { name: 'Jescah Awinja', role: 'Project Coordinator', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Jescah-370x446.png' },
+            { name: 'Cavins Kaumba', role: 'Director of Communication', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Kaumba-370x446.png' },
+            { name: 'Robinson Ododa', role: 'Consultant', photo: 'https://yidpk.org/wp-content/uploads/2021/09/Robinson-1-370x446.png' }
+        ];
+        const frequentlyAskedQuestions = [
+            {
+                question: 'What programmes does YIDP offer?',
+                answer: 'YIDP works across sports, education, health and wellbeing, and economic empowerment. Activities include sports training, scholarships and tutoring, digital literacy, wellness support, entrepreneurship and financial skills, and connections to employment opportunities.'
+            },
+            {
+                question: 'How does YIDP make a difference for young people in Kenya?',
+                answer: 'The project reports training 300 coaches and 1,000 young people, reaching 20,000 youth, and supporting 10 scholars. Its programmes also aim to strengthen wellbeing, learning, practical skills, confidence, and access to opportunities.'
+            },
+            {
+                question: 'How can I get involved as a volunteer, donor, or partner?',
+                answer: 'You can offer time and skills through coaching, tutoring, workshops, or other support; contribute resources; or explore a partnership. Contact the team to discuss what is currently needed.'
+            },
+            {
+                question: 'What challenges does YIDP work to address?',
+                answer: 'The programme identifies limited resources, the practical difficulty of reaching remote and underserved communities, the need to keep building team capacity, and wider issues such as poverty and inequality.'
+            },
+            {
+                question: 'What are YIDP’s future plans?',
+                answer: 'YIDP aims to extend access to its programmes, strengthen education, wellness, and digital skills, create more economic pathways for young people, and help grassroots sports clubs become more sustainable.'
+            }
+        ];
+        const coreValues = [
+            { name: 'Integrity', description: 'Act honestly and responsibly, and build trust through accountability.' },
+            { name: 'Equity', description: 'Work to make opportunities accessible to young people across backgrounds.' },
+            { name: 'Empowerment', description: 'Help young people build skills, confidence, and agency to shape their futures.' },
+            { name: 'Holistic Development', description: 'Support wellbeing, learning, relationships, and livelihoods together.' },
+            { name: 'Sustainability', description: 'Build lasting programmes and community capacity for the long term.' },
+            { name: 'Innovation', description: 'Use practical, creative approaches to respond to emerging needs.' },
+            { name: 'Hope', description: 'Recognize young people’s potential and keep possibilities in view.' },
+            { name: 'Collaboration', description: 'Work alongside young people, communities, and partners.' },
+            { name: 'Relevance', description: 'Shape support around local priorities and lived experience.' },
+            { name: 'Impact', description: 'Focus on meaningful progress in young people’s lives.' },
+            { name: 'Clarity', description: 'Communicate aims and actions in a clear, understandable way.' }
+        ];
+        const photoGallery = document.getElementById('photo-gallery');
+        const videoGallery = document.getElementById('video-gallery');
+        const partnerLogos = document.getElementById('partner-logos');
+        const teamGallery = document.getElementById('team-gallery');
+        const faqList = document.getElementById('faq-list');
+        const coreValuesList = document.getElementById('core-values-list');
+
+        function safeAssetUrl(value) {
+            try {
+                const url = new URL(value, window.location.href);
+                const sameOrigin = ['http:', 'https:', 'file:'].includes(url.protocol)
+                    && url.protocol === window.location.protocol
+                    && url.origin === window.location.origin;
+                if (url.protocol === 'https:' || sameOrigin) return url.href;
+            } catch (error) {
+                return null;
+            }
+            return null;
+        }
+
+        function renderEmptyState(container, title, description, className) {
+            const emptyState = createElement('div', className);
+            const icon = createElement('span', 'mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-lime/70 font-display text-2xl font-extrabold text-forest', 'YI');
+            icon.setAttribute('aria-hidden', 'true');
+            emptyState.append(icon, createElement('h3', 'mt-4 font-display text-lg font-extrabold text-forest', title));
+            emptyState.append(createElement('p', 'mx-auto mt-2 max-w-md text-sm leading-6 text-ink/60', description));
+            container.append(emptyState);
+        }
+
+        function renderMedia() {
+            photoGallery.replaceChildren();
+            videoGallery.replaceChildren();
+            partnerLogos.replaceChildren();
+
+            if (mediaItems.length === 0) {
+                renderEmptyState(photoGallery, 'Event photos are coming soon', 'This gallery will feature real photos from YIDK workshops, community events, and sports tournaments.', 'col-span-full rounded-[1.75rem] border-2 border-dashed border-forest/15 bg-white p-10 text-center');
+            } else {
+                mediaItems.forEach((item) => {
+                    const imageUrl = safeAssetUrl(item.src);
+                    if (!imageUrl || !item.alt || !item.caption) {
+                        renderEmptyState(photoGallery, 'A photo could not be displayed', 'Check that each photo has a valid HTTPS or local file URL, descriptive alt text, and a caption.', 'col-span-full rounded-[1.75rem] bg-[#f1e9d9] p-8 text-center');
+                        return;
+                    }
+                    const figure = createElement('figure', 'overflow-hidden rounded-[1.5rem] bg-white shadow-sm');
+                    const image = createElement('img', 'aspect-[4/3] w-full object-cover');
+                    image.src = imageUrl;
+                    image.alt = item.alt;
+                    image.loading = 'lazy';
+                    image.addEventListener('error', () => {
+                        image.replaceWith(createElement('div', 'grid aspect-[4/3] place-items-center bg-[#eaf0e7] p-6 text-center text-sm text-ink/60', `Photo unavailable: ${item.caption}`));
+                    }, { once: true });
+                    figure.append(image, createElement('figcaption', 'p-4 text-sm font-bold text-forest', item.caption));
+                    photoGallery.append(figure);
+                });
+            }
+
+            if (videoItems.length === 0) {
+                renderEmptyState(videoGallery, 'Video highlights are coming soon', 'YouTube and Vimeo event videos will be embedded here once the real links are available.', 'col-span-full rounded-[1.75rem] border-2 border-dashed border-forest/15 bg-white p-10 text-center');
+            } else {
+                videoItems.forEach((item) => {
+                    const validId = item.provider === 'youtube'
+                        ? /^[A-Za-z0-9_-]{11}$/.test(item.id)
+                        : item.provider === 'vimeo' && /^\d+$/.test(item.id);
+                    if (!validId || !item.title) {
+                        renderEmptyState(videoGallery, 'A video link needs attention', 'Use a YouTube video ID (11 characters) or Vimeo video ID (numbers only), and add a title.', 'col-span-full rounded-[1.75rem] bg-[#f1e9d9] p-8 text-center');
+                        return;
+                    }
+                    const card = createElement('article', 'overflow-hidden rounded-[1.5rem] bg-white shadow-sm');
+                    const frame = createElement('iframe', 'aspect-video w-full bg-forest');
+                    frame.src = item.provider === 'youtube'
+                        ? `https://www.youtube-nocookie.com/embed/${item.id}`
+                        : `https://player.vimeo.com/video/${item.id}`;
+                    frame.title = item.title;
+                    frame.loading = 'lazy';
+                    frame.referrerPolicy = 'strict-origin-when-cross-origin';
+                    frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    frame.allowFullscreen = true;
+                    card.append(frame, createElement('h4', 'p-4 font-display text-base font-extrabold text-forest', item.title));
+                    if (item.caption) card.append(createElement('p', 'px-4 pb-4 text-sm leading-6 text-ink/60', item.caption));
+                    videoGallery.append(card);
+                });
+            }
+
+            if (partnerItems.length === 0) {
+                renderEmptyState(partnerLogos, 'Partner logos will appear here', 'NGO, community partner, and government affiliation logos will be added when the approved assets are provided.', 'col-span-full rounded-[1.75rem] border-2 border-dashed border-forest/15 bg-paper p-10 text-center');
+            } else {
+                partnerItems.forEach((partner) => {
+                    const logoUrl = safeAssetUrl(partner.logo);
+                    if (!logoUrl || !partner.name) {
+                        renderEmptyState(partnerLogos, 'A partner logo could not be displayed', 'Check that each partner has a name and a valid HTTPS or local image URL.', 'col-span-full rounded-[1.75rem] bg-[#f1e9d9] p-8 text-center');
+                        return;
+                    }
+                    const card = createElement('div', 'flex min-h-32 flex-col items-center justify-center gap-3 rounded-2xl border border-forest/10 bg-paper p-5 text-center');
+                    const image = createElement('img', 'h-14 max-w-full object-contain');
+                    image.src = logoUrl;
+                    image.alt = `${partner.name} logo`;
+                    image.loading = 'lazy';
+                    image.addEventListener('error', () => {
+                        image.replaceWith(createElement('span', 'text-xs text-ink/60', 'Logo unavailable'));
+                    }, { once: true });
+                    card.append(image, createElement('p', 'text-xs font-bold text-forest', partner.name));
+                    if (partner.category) card.append(createElement('p', 'text-xs text-ink/55', partner.category));
+                    if (partner.website) {
+                        const websiteUrl = safeAssetUrl(partner.website);
+                        if (websiteUrl && new URL(websiteUrl).protocol === 'https:') {
+                            const link = createElement('a', 'text-xs font-bold text-leaf underline underline-offset-4', 'Visit website');
+                            link.href = websiteUrl;
+                            link.target = '_blank';
+                            link.rel = 'noopener noreferrer';
+                            card.append(link);
+                        }
+                    }
+                    partnerLogos.append(card);
+                });
+            }
+        }
+
+        function renderTeam() {
+            teamGallery.replaceChildren();
+            if (teamMembers.length === 0) {
+                renderEmptyState(teamGallery, 'Team profiles are coming soon', 'Add team names, roles, and approved portrait URLs to the teamMembers list in this page’s JavaScript.', 'col-span-full rounded-[1.75rem] border-2 border-dashed border-forest/15 bg-white p-10 text-center');
+                return;
+            }
+
+            teamMembers.forEach((member) => {
+                const photoUrl = safeAssetUrl(member.photo);
+                if (!photoUrl || !member.name || !member.role) {
+                    renderEmptyState(teamGallery, 'A team profile needs attention', 'Each profile needs a name, role, and valid HTTPS or local portrait URL.', 'col-span-full rounded-[1.75rem] bg-white p-8 text-center');
+                    return;
+                }
+
+                const card = createElement('article', 'overflow-hidden rounded-[1.5rem] bg-white shadow-sm');
+                const portrait = createElement('img', 'aspect-[4/3] w-full bg-[#dfe9d4] object-cover object-top');
+                portrait.src = photoUrl;
+                portrait.alt = `Portrait of ${member.name}`;
+                portrait.loading = 'lazy';
+                portrait.addEventListener('error', () => {
+                    portrait.replaceWith(createElement('div', 'grid aspect-[4/3] place-items-center bg-[#dfe9d4] p-6 text-center text-sm text-ink/60', `Portrait unavailable for ${member.name}`));
+                }, { once: true });
+                const information = createElement('div', 'p-5');
+                information.append(createElement('h3', 'font-display text-lg font-extrabold text-forest', member.name));
+                information.append(createElement('p', 'mt-1 text-sm font-semibold leading-6 text-leaf', member.role));
+                card.append(portrait, information);
+                teamGallery.append(card);
+            });
+        }
+
+        function renderFaqAndValues() {
+            frequentlyAskedQuestions.forEach((item) => {
+                const details = createElement('details', 'group rounded-2xl border border-forest/10 bg-white p-5');
+                const summary = createElement('summary', 'flex cursor-pointer list-none items-start justify-between gap-4 font-display text-base font-extrabold leading-6 text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf');
+                summary.append(createElement('span', '', item.question));
+                summary.append(createElement('span', 'shrink-0 text-xl font-medium text-leaf', '+'));
+                const answer = createElement('p', 'mt-4 border-t border-forest/10 pt-4 text-sm leading-6 text-ink/65', item.answer);
+                details.append(summary, answer);
+                details.addEventListener('toggle', () => {
+                    summary.lastElementChild.textContent = details.open ? '−' : '+';
+                });
+                faqList.append(details);
+            });
+
+            coreValues.forEach((item) => {
+                const card = createElement('article', 'rounded-2xl bg-[#eaf0e7] p-5');
+                card.append(createElement('h4', 'font-display text-base font-extrabold text-forest', item.name));
+                card.append(createElement('p', 'mt-2 text-sm leading-6 text-ink/65', item.description));
+                coreValuesList.append(card);
+            });
+        }
+
+        function renderEvents() {
+            const year = displayedMonth.getFullYear();
+            const month = displayedMonth.getMonth();
+            const monthKey = `${year}-${String(month + 1).padStart(2, '0')}`;
+            const visibleEvents = calendarEvents.filter((item) =>
+                (item.date.startsWith(monthKey) || (item.endDate && item.endDate.startsWith(monthKey))) &&
+                (item.endDate || item.date) >= todayKey &&
+                (selectedFilter === 'all' || item.type === selectedFilter) &&
+                (!selectedDate || (item.date <= selectedDate && (item.endDate || item.date) >= selectedDate))
+            );
+
+            calendarMonth.textContent = displayedMonth.toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
+            eventListTitle.textContent = selectedDate
+                ? new Date(`${selectedDate}T12:00:00`).toLocaleDateString(undefined, { month: 'long', day: 'numeric' })
+                : `Events in ${displayedMonth.toLocaleDateString(undefined, { month: 'long' })}`;
+            calendarDays.replaceChildren();
+            eventList.replaceChildren();
+
+            const firstWeekday = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const eventsByDate = new Set();
+            calendarEvents
+                .filter((item) => (item.endDate || item.date) >= todayKey && (selectedFilter === 'all' || item.type === selectedFilter))
+                .forEach((item) => {
+                    const rangeStart = new Date(`${item.date}T12:00:00`);
+                    const rangeEnd = new Date(`${item.endDate || item.date}T12:00:00`);
+                    for (const date = new Date(rangeStart); date <= rangeEnd; date.setDate(date.getDate() + 1)) {
+                        const dateKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+                        if (dateKey >= todayKey) eventsByDate.add(dateKey);
+                    }
+                });
+            clearEventDate.classList.toggle('hidden', !selectedDate);
+
+            for (let blank = 0; blank < firstWeekday; blank += 1) {
+                calendarDays.append(createElement('span', 'h-11'));
+            }
+
+            for (let day = 1; day <= daysInMonth; day += 1) {
+                const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+                const dateButton = createElement('button', 'relative mx-auto grid h-10 w-10 place-items-center rounded-full text-sm font-semibold text-ink transition hover:bg-[#eaf0e7]');
+                dateButton.type = 'button';
+                dateButton.textContent = String(day);
+                dateButton.setAttribute('aria-label', new Date(year, month, day).toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' }));
+                dateButton.setAttribute('aria-pressed', String(selectedDate === dateKey));
+                if (selectedDate === dateKey) dateButton.className = 'relative mx-auto grid h-10 w-10 place-items-center rounded-full bg-forest text-sm font-bold text-white';
+                else if (dateKey === todayKey) dateButton.className = 'relative mx-auto grid h-10 w-10 place-items-center rounded-full border-2 border-lime text-sm font-bold text-forest';
+                if (eventsByDate.has(dateKey)) {
+                    const marker = createElement('span', `absolute bottom-1 h-1.5 w-1.5 rounded-full ${selectedDate === dateKey ? 'bg-lime' : 'bg-leaf'}`);
+                    marker.setAttribute('aria-hidden', 'true');
+                    dateButton.append(marker);
+                }
+                dateButton.addEventListener('click', () => {
+                    selectedDate = selectedDate === dateKey ? null : dateKey;
+                    renderEvents();
+                });
+                calendarDays.append(dateButton);
+            }
+
+            if (visibleEvents.length === 0) {
+                const message = selectedDate
+                    ? 'No upcoming events on this date. Choose another date or clear the date selection.'
+                    : 'No upcoming events are listed for this month yet. Check back soon.';
+                const emptyMessage = createElement('p', 'rounded-2xl bg-[#eaf0e7] p-5 text-sm leading-6 text-ink/65', message);
+                eventList.append(emptyMessage);
+                return;
+            }
+
+            visibleEvents.forEach((item) => {
+                const card = createElement('article', 'rounded-2xl border border-forest/10 p-4 sm:p-5');
+                const category = createElement('p', 'text-xs font-bold uppercase tracking-[0.14em] text-leaf', item.type === 'sport' ? 'Sport' : 'Workshop');
+                const title = createElement('h4', 'mt-2 font-display text-lg font-extrabold text-forest', item.title);
+                const date = createElement('p', 'mt-1 text-sm font-semibold text-ink/70', new Date(`${item.date}T12:00:00`).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' }));
+                const details = createElement('p', 'mt-2 text-sm leading-6 text-ink/60', [item.time, item.location].filter(Boolean).join(' · '));
+                card.append(category, title, date);
+                if (details.textContent) card.append(details);
+                if (item.description) card.append(createElement('p', 'mt-3 text-sm leading-6 text-ink/65', item.description));
+                if (item.url) {
+                    const eventUrl = safeAssetUrl(item.url);
+                    if (eventUrl && new URL(eventUrl).protocol === 'https:') {
+                        const link = createElement('a', 'mt-4 inline-flex items-center gap-2 text-sm font-bold text-leaf underline underline-offset-4', 'View event details');
+                        link.href = eventUrl;
+                        link.target = '_blank';
+                        link.rel = 'noopener noreferrer';
+                        card.append(link);
+                    }
+                }
+                eventList.append(card);
+            });
+        }
+
+        document.getElementById('calendar-previous').addEventListener('click', () => {
+            displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() - 1, 1);
+            selectedDate = null;
+            renderEvents();
+        });
+
+        document.getElementById('calendar-next').addEventListener('click', () => {
+            displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() + 1, 1);
+            selectedDate = null;
+            renderEvents();
+        });
+
+        clearEventDate.addEventListener('click', () => {
+            selectedDate = null;
+            renderEvents();
+        });
+
+        eventFilters.forEach((button) => {
+            button.addEventListener('click', () => {
+                selectedFilter = button.dataset.eventFilter;
+                eventFilters.forEach((filterButton) => {
+                    const isSelected = filterButton === button;
+                    filterButton.setAttribute('aria-pressed', String(isSelected));
+                    filterButton.className = isSelected
+                        ? 'rounded-full bg-forest px-4 py-2 text-xs font-bold text-white'
+                        : 'rounded-full border border-forest/15 px-4 py-2 text-xs font-bold text-forest transition hover:bg-[#eaf0e7]';
+                });
+                renderEvents();
+            });
+        });
+
+        renderMedia();
+        renderTeam();
+        renderFaqAndValues();
+        renderEvents();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
